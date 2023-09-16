@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3"
+  },
+  "scripts": {
+    "watch": "npx tailwindcss -i ./input.css -o ./public/output.css --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./public/output.css"
+  },
+  "dependencies": {
+    "total.js": "^3.4.13",
+    "total4": "^0.0.88"
+  }
+}

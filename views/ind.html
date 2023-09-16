@@ -1,0 +1,62 @@
+@{if model.hidden==1}
+<div>
+    <div class="flex justify-center">
+        <h1 class="flex justify-center rounded-full px-2 py-2 w-40 h-10 bg-yellow-400 border-spacing-10">
+            Post your Query
+        </h1>
+    </div>
+    <main class="flex justify-center">
+        <div class="flex justify-center px-2 py-4 bg-black w-96 h-96 rounded-md">
+            <div>
+                <div class="bg-white rounded-md w-full p-2">
+                <form id="form1" method="post" action="/storedb">
+                    <label  for="name">Name:</label>
+                    <input class="border-black border-spacing-2 shadow-lg shadow-black" type="text" name="name" placeholder="enter name" size="30" required><br>
+                    <label for="email">Email:</label>
+                    <input class="mx-2 my-2 border-black border-spacing-2 shadow-lg shadow-black" type="text" name="Email" placeholder="abcxyz@gmail.com" size="30" required><br>
+                    <label for="Gender">Gender:</label>
+                    <input type="radio" name="Gender" value="Male">
+                    <label for="Male">Male</label>
+                    <input type="radio" name="Gender" value="Female">
+                    <label for="Female">Female</label>
+                    <input type="radio" name="Gender" value="Other">
+                    <label for="Other">Other</label><br>
+                    <label for="query">Query</label>
+                    <textarea class="mx-2 my-2 border-black border-spacing-2 shadow-lg shadow-black" type="text" query="contents" name="contents" placeholder="enter query under 50 words" rows="5" cols="40"></textarea><br>
+                    <input type="checkbox" name="tnc" required>agree to terms and conditions <br>
+                    <div class="flex justify-evenly">
+                    <button type="submit" class="bg-yellow-400 px-2 py-2 mx-2 my-2 rounded-full" form="form1">Submit</button>
+                    <button type="reset" class="bg-yellow-400 px-2 py-2 mx-2 my-2 rounded-full" form="form1">Reset</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="flex justify-center">
+        <div class="flex justify-evenly">
+        <form method="get" id="f2" action="/view" class="flex justify-center">
+            <div class="flex justify-evenly">
+                <button type="submit" form="f2" class="bg-yellow-400 px-2 py-2 mx-2 my-2 rounded-full">view submitted form</button>
+            </div>
+        </form>
+        <form method="get" id="f3" action="/listedit" class="flex justify-center">
+            <div class="flex justify-right">
+                <button type="submit" form="f3" class="bg-yellow-400 px-2 py-2 mx-2 my-2 rounded-full">Edit/delete forms</button>
+            </div>
+        </form>
+        </div>
+    </footer>
+</div>
+@{else}
+<div >
+    <div class="flex justify-evenly">
+        <div class="flex justify-center align-middle items-center h-screen">
+        <span class="text-white items-center">Thank you @{model.name}</span>
+        </div>
+    <form action="/home" id="form10" class="flex justify-center h-screen items-center">
+        <button type="submit" form="form10" class="bg-yellow-400 flex justify-center items-center rounded-md">go back</button>
+    </form>
+    </div>
+</div>
+@{fi}

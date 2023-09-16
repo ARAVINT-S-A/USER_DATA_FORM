@@ -1,0 +1,20 @@
+@{if model.submit==1}
+
+    <div class="flex justify-center items-center h-screen w-screen">
+        <form method="post" action="/showform" id="form4">
+        <input class="rounded-md m-2" name="name" type="text" placeholder="enter you name to fetch form">
+        <button type="submit" class="bg-yellow-400 w-12 h-8 rounded-md">submit</button>
+        </form>
+    </div>
+@{else}
+<div class="flex justify-center items-center h-screen">
+    <div class="grid grid-cols-2 text-white bg-black wx-auto h-auto p-2 m-2">
+        <div class="flex justify-center content-center">name</div>
+        <div class="flex justify-center content-center">email</div>
+            @{foreach m in model.querydata}
+            <div class="flex justify-center content-center">@{m.name}</div>
+            <div class="flex justify-center content-center">@{m.Email}</div>
+            @{end}
+    </div>
+    </div>
+@{fi}
